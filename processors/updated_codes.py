@@ -32,26 +32,36 @@ sector_dict = {
 }
 
 def get_sector_code(code): 
+  if (type(code) != str):
+     return None
   if (len(code) <= 1):
     return None
   return code[:2]
 
 def get_subsector_code(code): 
+  if (type(code) != str):
+     return None
   if (len(code) <= 2):
     return None
   return code[:3]
 
 def get_industry_group_code(code): 
+  if (type(code) != str):
+     return None
   if (len(code) <= 4):
     return None
   return code[:4]
 
 def get_sector_code(code): 
+  if (type(code) != str):
+     return None
   if (len(code) <= 1):
     return code
   return code[:2]
 
 def getSectorDescription(code):
+  if (code is None):
+     return None
   code = int(code)
   if code in sector_dict:
     return sector_dict[code]
